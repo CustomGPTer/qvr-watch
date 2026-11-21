@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>QVR Watch: record video on a full Android watch, controlled from your phone</title>
+<meta name="description" content="QVR Watch records video with a full Android watch&#x27;s own camera. QVR Watch Control starts and stops it from your phone over Bluetooth. No internet, no account, no adverts. A first test build.">
+<meta name="author" content="Jonathan Jackson">
+<link rel="canonical" href="https://customgpter.github.io/qvr-watch/">
+<meta name="theme-color" content="#faf6f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#110a0c" media="(prefers-color-scheme: dark)">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="QVR Watch">
+<meta property="og:title" content="QVR Watch: record video on a full Android watch, controlled from your phone">
+<meta property="og:description" content="QVR Watch records video with a full Android watch&#x27;s own camera. QVR Watch Control starts and stops it from your phone over Bluetooth. No internet, no account, no adverts. A first test build.">
+<meta property="og:url" content="https://customgpter.github.io/qvr-watch/">
+<meta property="og:image" content="https://customgpter.github.io/qvr-watch/assets/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="QVR Watch Control on a phone, connected to a watch and ready to record">
+<meta property="og:locale" content="en_GB">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
+<link rel="preload" href="./assets/fonts/bricolage-grotesque-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="./assets/fonts/atkinson-hyperlegible-latin-400-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="./assets/site.css?v=1">
+<link rel="stylesheet" href="./assets/house.css?v=1">
+<link rel="stylesheet" href="./assets/apps-list.css?v=1">
+<script src="./assets/apps-list.js?v=1" defer></script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"QVR Watch","url":"https://customgpter.github.io/qvr-watch/","description":"QVR Watch records video with a full Android watch's own camera. QVR Watch Control starts and stops it from your phone over Bluetooth. No internet, no account, no adverts. A first test build.","applicationCategory":"MultimediaApplication","operatingSystem":"Android 10 or later, Bluetooth Classic","softwareVersion":"1.0.0 beta 1","downloadUrl":"https://github.com/CustomGPTer/qvr-watch/releases/download/v1.0.0-beta1/QVR-Watch.apk","releaseNotes":"https://customgpter.github.io/qvr-watch/releases.html","offers":{"@type":"Offer","price":"0","priceCurrency":"GBP"},"inLanguage":"en-GB","image":"https://customgpter.github.io/qvr-watch/assets/og.png","featureList":["One-tap recording","Quality","File length","Looks after itself","Start and stop","Live status","Settings from afar","Saved on the watch","Play or delete"],"author":{"@type":"Person","name":"Jonathan Jackson"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Which watches does it work on?","acceptedAnswer":{"@type":"Answer","text":"Full Android watches, Android 10 or later, that have a camera and Bluetooth Classic. It does not work on Wear OS-only, Apple, Huawei or fitness watches."}},{"@type":"Question","name":"Is there a live view?","acceptedAnswer":{"@type":"Answer","text":"No. Neither app shows a picture while recording. That keeps the link small and the battery going longer."}},{"@type":"Question","name":"Where are the videos?","acceptedAnswer":{"@type":"Answer","text":"On the watch, in Movies/QVR Watch. Copy them off with your watch's own file transfer or a USB cable. The phone app does not copy videos."}},{"@type":"Question","name":"What if Bluetooth drops?","acceptedAnswer":{"@type":"Answer","text":"The watch keeps recording. The phone reconnects by itself and shows the real state again."}},{"@type":"Question","name":"Is it free?","acceptedAnswer":{"@type":"Answer","text":"Yes. Both apps are free, with no adverts and nothing to unlock."}}]}</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="masthead">
+<div class="wrap">
+<a class="brand" href="./" aria-label="QVR Watch home"><svg viewBox="0 0 108 108" aria-hidden="true"><rect width="108" height="108" rx="24" fill="#5a1a26"/><rect x="38" y="32" width="32" height="44" rx="9" fill="none" stroke="#fff" stroke-width="4.5"/><path d="M46 32v-8h16v8M46 76v8h16v-8" fill="none" stroke="#fff" stroke-width="4"/><circle cx="54" cy="54" r="6.5" fill="#ff5a5f"/></svg><span>QVR Watch</span></a><span class="beta-tag">Beta</span>
+<nav aria-label="Main"><ul><li><a href="./#features">Features</a></li><li><a href="./compare.html">Compare</a></li><li><a href="./releases.html">Releases</a></li><li><a class="more-apps" href="./more-apps.html"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.6"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.6"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.6"/></svg>More apps</a></li></ul></nav>
+<a class="button small" href="./#download"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></svg>Download</a>
+</div>
+</header>
+<main id="main">
+<div class="hero">
+<div class="wrap hero-grid">
+<div class="hero-copy">
+<h1>Your watch records. Your phone is the remote.</h1>
+<p class="lede">QVR Watch turns a full Android watch with a camera into a small video recorder. Record from the watch itself, or start and stop it from your phone with QVR Watch Control.</p><p class="lede">Videos are saved on the watch. Nothing goes over the internet, and nothing is uploaded anywhere.</p>
+<p class="beta-note"><b>Test build.</b> This is a first test build. It has not yet been tried with a real watch and phone. It needs a full Android watch with a camera and Bluetooth Classic, not a Wear OS-only, Apple, Huawei or fitness watch.</p>
+<div class="gate-scope"><div class="law-box" data-gate><label><input type="checkbox"> I understand and will use this app within the law</label><p>Recording people is covered by the law. <a href="terms.html#law">What the law says</a></p><noscript><p>Turn on JavaScript to tick the box and download.</p></noscript></div><p class="get" id="download"><a class="button" data-href="https://github.com/CustomGPTer/qvr-watch/releases/download/v1.0.0-beta1/QVR-Watch.apk" aria-disabled="true" role="link" tabindex="-1"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></svg>Download for Android</a><a class="button quiet" data-href="https://github.com/CustomGPTer/qvr-watch/releases/download/v1.0.0-beta1/QVR-Watch-Control.apk" aria-disabled="true" role="link" tabindex="-1"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></svg>QVR Watch Control</a><a class="aside" href="#install">How to install</a></p></div>
+<ul class="pills"><li>Version 1.0.0 beta 1</li><li>Android 10 or later, Bluetooth Classic</li><li>41 KB, plus 29 KB for the phone</li><li>Test build</li></ul>
+<p class="facts">Free, with nothing to unlock. No adverts, no account with the developer, no tracking. <a href="compare.html">Compare</a> or read the <a href="releases.html">release notes</a>.</p>
+<p class="facts">Chrome may say the file might be harmful. It shows this for app files that do not come from Google Play. Choose Download anyway.</p>
+</div>
+<div class="hero-phone"><div class="phone"><img src="./assets/screens/control-ready.png" alt="Connected: the watch&#x27;s camera, battery and free space." width="393" height="852" fetchpriority="high"></div></div>
+</div>
+</div>
+
+<section class="promises" aria-label="In short">
+<div class="wrap"><ul><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.6 12.4l2.3 2.3 4.5-4.9"/></svg><span><b>Two small apps</b><span>One for the watch, one for the phone.</span></span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.6 12.4l2.3 2.3 4.5-4.9"/></svg><span><b>No internet</b><span>Bluetooth between your own two devices only.</span></span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.6 12.4l2.3 2.3 4.5-4.9"/></svg><span><b>No account</b><span>Nothing to sign up for.</span></span></li><li><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M8.6 12.4l2.3 2.3 4.5-4.9"/></svg><span><b>No adverts</b><span>None in the apps and none on this site.</span></span></li></ul></div>
+</section>
+
+<section id="screens" aria-labelledby="screens-h">
+<div class="wrap">
+<h2 id="screens-h">A look inside</h2>
+<p class="intro">These are the real screens of both apps, drawn from their own code with a made-up watch and recordings. The phone screens show QVR Watch Control; the others are the watch app shown at phone size. Swipe or scroll sideways to see them all.</p>
+<div class="gallery" tabindex="0" role="region" aria-label="Screens from QVR Watch"><figure class="shot"><div class="phone"><img src="./assets/screens/watch-ready.png" alt="The watch app: choose a camera and press Record." width="393" height="852" loading="eager" decoding="async"></div><figcaption>The watch app: choose a camera and press Record.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/watch-recording.png" alt="Recording on the watch, with the time, size and sound shown." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Recording on the watch, with the time, size and sound shown.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/watch-settings.png" alt="Watch settings: camera, quality, file length and sound." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Watch settings: camera, quality, file length and sound.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/watch-recordings.png" alt="Recordings saved on the watch, with length and size." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Recordings saved on the watch, with length and size.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/control-off.png" alt="QVR Watch Control on the phone, before connecting." width="393" height="852" loading="eager" decoding="async"></div><figcaption>QVR Watch Control on the phone, before connecting.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/control-ready.png" alt="Connected: the watch&#x27;s camera, battery and free space." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Connected: the watch&#x27;s camera, battery and free space.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/control-recording.png" alt="Recording on the watch, started from the phone." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Recording on the watch, started from the phone.</figcaption></figure><figure class="shot"><div class="phone"><img src="./assets/screens/control-settings.png" alt="Change the watch&#x27;s settings from the phone." width="393" height="852" loading="eager" decoding="async"></div><figcaption>Change the watch&#x27;s settings from the phone.</figcaption></figure></div>
+</div>
+</section>
+
+<section id="how" aria-labelledby="how-h">
+<div class="wrap">
+<h2 id="how-h">How it works</h2>
+<p class="intro">Install one app on each device, pair them once, and the phone becomes the remote.</p>
+<ol class="steps"><li><h3>Install and pair</h3><p>Put QVR Watch on the watch and QVR Watch Control on the phone, then pair them in Android's Bluetooth settings.</p></li><li><h3>Allow phone control</h3><p>On the watch, tap Phone control and choose your phone. Only that phone is accepted.</p></li><li><h3>Record from the phone</h3><p>Connect in QVR Watch Control and press Start recording. The watch keeps recording if Bluetooth drops.</p></li></ol>
+</div>
+</section>
+
+<section id="features" aria-labelledby="features-h">
+<div class="wrap">
+<h2 id="features-h">Everything is in, and all of it is free</h2>
+<p class="intro">Nothing below is held back for a paid tier, because there is no paid tier.</p>
+<div class="groups"><div class="group"><h3>On the watch</h3><dl><div><dt>One-tap recording</dt><dd>Choose camera 1 or 2 and press Record.</dd></div><div><dt>Quality</dt><dd>Low, medium or high, matched to what the camera supports.</dd></div><div><dt>File length</dt><dd>Unlimited, or 1 to 60 minutes per file, with an optional next file.</dd></div><div><dt>Looks after itself</dt><dd>Stops and saves at 10% battery or when space runs low.</dd></div></dl></div><div class="group"><h3>From the phone</h3><dl><div><dt>Start and stop</dt><dd>Over Bluetooth, even with the watch screen off.</dd></div><div><dt>Live status</dt><dd>Recording time, camera, battery and free space.</dd></div><div><dt>Settings from afar</dt><dd>Change the watch's settings without touching it.</dd></div></dl></div><div class="group"><h3>Your recordings</h3><dl><div><dt>Saved on the watch</dt><dd>Ordinary video files in Movies/QVR Watch.</dd></div><div><dt>Play or delete</dt><dd>From the recordings list, with a confirmation before deleting.</dd></div></dl></div></div>
+</div>
+</section>
+
+<section id="privacy" aria-labelledby="privacy-h">
+<div class="wrap">
+<h2 id="privacy-h">Between your watch and your phone</h2>
+<ul class="plain"><li><h3>No internet</h3><p>Neither app asks for internet access.</p></li><li><h3>One phone only</h3><p>The watch accepts commands only from the phone you chose.</p></li><li><h3>No ads, no tracking</h3><p>Nothing in the apps or on this site.</p></li></ul>
+</div>
+</section>
+
+<section id="law" aria-labelledby="law-h" class="law-band">
+<div class="wrap">
+<h2 id="law-h">Use it within the law</h2>
+<p class="intro">QVR apps record video and sound, and can keep recording with the screen off. Who and where you record, and what you do with the recordings, is your responsibility.</p>
+<ul class="ticks"><li><b>UK GDPR and the Data Protection Act 2018.</b> Recording identifiable people is processing their personal data. If you record beyond your own home and private life, data protection law is likely to apply to you. The Information Commissioner's Office has guidance at <a href="https://ico.org.uk">ico.org.uk</a>.</li><li><b>Protection from Harassment Act 1997.</b> Using a camera to watch, follow or keep a record of someone can be harassment.</li><li><b>Sexual Offences Act 2003, section 67 (voyeurism).</b> Recording people in places where they expect privacy, such as a bathroom, a changing room or a bedroom, is a crime.</li><li><b>Covert recording.</b> Recording someone without their knowledge can break data protection law, workplace rules and the rules of the place you are in, and recordings made that way may not be accepted as evidence. If in doubt, tell people they are being recorded.</li></ul>
+<p class="after-table">Laws differ in other countries. If you are not in the UK, the rules where you are apply. Read the <a href="terms.html#law">terms of use</a>.</p>
+</div>
+</section>
+<section id="install" aria-labelledby="install-h">
+<div class="wrap">
+<h2 id="install-h">Installing and updating</h2>
+<p class="intro">QVR Watch is not on Google Play, so your phone asks a couple of extra questions the first time.</p>
+<ol class="steps"><li><h3>Download the app file</h3><p>Tap Download on your phone. The file is called QVR-Watch.apk and is about 41 KB, plus 29 KB for the phone. If Chrome says the file might be harmful, choose Download anyway. First tick the box to say you will use the app within the law.</p></li><li><h3>Allow the install</h3><p>Open the file. The first time, Android asks you to allow your browser to install apps. Allow it, go back and tap Install. If Google Play Protect steps in, choose More details, then Install anyway.</p></li><li><h3>Updating later</h3><p>QVR Watch tells you when a newer version is out. Install the new file over the old one and everything you have saved is kept.</p></li></ol>
+<p class="after-table">Version 1.0.0 beta 1, released 21 November 2026. See the <a href="releases.html">release notes</a>, or <a href="releases.html#checking">check your download</a>.</p>
+</div>
+</section>
+
+<section id="questions" aria-labelledby="questions-h">
+<div class="wrap">
+<h2 id="questions-h">Questions</h2>
+<div class="faq"><details><summary>Which watches does it work on?</summary><p>Full Android watches, Android 10 or later, that have a camera and Bluetooth Classic. It does not work on Wear OS-only, Apple, Huawei or fitness watches.</p></details><details><summary>Is there a live view?</summary><p>No. Neither app shows a picture while recording. That keeps the link small and the battery going longer.</p></details><details><summary>Where are the videos?</summary><p>On the watch, in Movies/QVR Watch. Copy them off with your watch's own file transfer or a USB cable. The phone app does not copy videos.</p></details><details><summary>What if Bluetooth drops?</summary><p>The watch keeps recording. The phone reconnects by itself and shows the real state again.</p></details><details><summary>Is it free?</summary><p>Yes. Both apps are free, with no adverts and nothing to unlock.</p></details></div>
+</div>
+</section>
+
+<section class="closing" aria-labelledby="closing-h">
+<div class="wrap">
+<div><h2 id="closing-h">A recorder on your wrist</h2><p>Free, with no adverts and nothing to unlock. Made by the developer of several other free Android apps: <a href="more-apps.html">see them all</a>.</p></div>
+<a class="button" href="./#download"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11"/><path d="M7 10.5l5 5 5-5"/><path d="M5 20h14"/></svg>Download for Android</a>
+</div>
+</section>
+</main>
+<footer class="colophon">
+<div class="wrap">
+<div>
+<a class="brand" href="./" aria-label="QVR Watch home"><svg viewBox="0 0 108 108" aria-hidden="true"><rect width="108" height="108" rx="24" fill="#5a1a26"/><rect x="38" y="32" width="32" height="44" rx="9" fill="none" stroke="#fff" stroke-width="4.5"/><path d="M46 32v-8h16v8M46 76v8h16v-8" fill="none" stroke="#fff" stroke-width="4"/><circle cx="54" cy="54" r="6.5" fill="#ff5a5f"/></svg><span>QVR Watch</span></a>
+<p>&copy; 2026 Jonathan Jackson. QVR Watch is an independent app.</p>
+<p>This site uses no cookies and no tracking. The only script on it unlocks the download once the lawful-use box is ticked.</p>
+<p>Set in Bricolage Grotesque and Atkinson Hyperlegible.</p>
+</div>
+<nav aria-label="The app"><h2>The app</h2><ul>
+<li><a href="./">Home</a></li>
+<li><a href="./compare.html">Compare</a></li>
+<li><a href="./releases.html">Release notes</a></li>
+
+</ul></nav>
+<nav aria-label="Legal"><h2>Legal</h2><ul>
+<li><a href="./privacy.html">Privacy policy</a></li>
+<li><a href="./terms.html">Terms of use</a></li>
+<li><a href="./licences.html">Licences</a></li>
+</ul></nav>
+<nav aria-label="More"><h2>More</h2><ul>
+<li><a href="./more-apps.html">More apps</a></li>
+<li><a href="https://customgpter.github.io/">All apps</a></li>
+<li><a href="https://github.com/CustomGPTer/qvr-watch/issues">Contact</a></li>
+</ul></nav>
+</div>
+</footer>
+</body>
+</html>
